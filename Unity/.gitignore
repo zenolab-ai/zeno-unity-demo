@@ -67,9 +67,6 @@ crashlytics-build.properties
 # TextMesh Pro
 Assets/TextMesh*
 
-# Assetsbundle
-Assets/AssetBundles/
-Assets/AssetBundles
 Assets/StreamingAssets.meta
 Assets/StreamingAssets/
 
@@ -82,6 +79,4 @@ node_modules/
 ProjectSettings/BurstAotSettings_StandaloneWindows.json
 UserSettings/
 
-# GitDependencyResolverForUnity hide auto-installed package.
-Packages/.*
-
+.utmp/

@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "ai.zenolab.sdk": {
+      "version": "file:ai.zenolab.sdk-0.3.1.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.unity.render-pipelines.universal": "17.2.0"
+      }
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.9",
       "depth": 0,
@@ -53,11 +61,11 @@
       "dependencies": {}
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.23",
+      "version": "2.0.25",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.test-framework": "1.1.9"
+        "com.unity.test-framework": "1.1.31"
       },
       "url": "https://packages.unity.com"
     },

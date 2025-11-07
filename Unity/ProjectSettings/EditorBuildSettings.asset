@@ -5,11 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Examples/MirrorSceneExample/MirrorSceneExample_DefaultUI.unity
-    guid: bc758dca4840d8b45ab27138c7f3a6db
   - enabled: 1
-    path: Assets/Examples/MirrorSceneExample/MirrorSceneExample_ClassyUI.unity
+    path: Assets/Examples/Gravity/Gravity.unity
     guid: 5b4c199af5a82334a80d0e6e16d5896d
   m_configObjects:
     AR Foundation RemoteARFoundationRemoteLoaderSettings: {fileID: 11400000, guid: 2ec9d2b32bc49bb499383613089f3a8e, type: 2}
@@ -19,3 +16,4 @@ EditorBuildSettings:
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 8d50f9acb4ccb484e91681b0197f6b9e, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: ecf596e163165e24f91c92d364b09754, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fe1bebc918968e04fa13bf38e50020b8, type: 2}
+  m_UseUCBPForAssetBundles: 0
