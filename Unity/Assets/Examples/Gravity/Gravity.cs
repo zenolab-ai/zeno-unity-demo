@@ -6,7 +6,8 @@ using ZenoSDK.UI;
 public class Gravity : MonoBehaviour
 {
     public Canvas rootCanvas;
-    public GameObject gameButtons;
+    public GameObject gameMenu;
+
     public Material objMaterial;
     
     private List<GameObject> _objs = new();
@@ -26,7 +27,7 @@ public class Gravity : MonoBehaviour
             Debug.Log($"Zeno API is not available.");
         }
 
-        ResetGameUI();
+        HideGameMenu();
     }
 
     private void OnDestroy()
@@ -39,62 +40,52 @@ public class Gravity : MonoBehaviour
         // Called by Zeno when a scene has processed.
         if (info.HasValue)
         {
-            Debug.Log($"Example scanned zone is ready to use. {info.Value.status}");
+            Debug.Log($"Scanned zone is ready to use. {info.Value.status}");
         }
         else
         {
-            Debug.Log($"Example scanned zone failed to process.");
+            Debug.Log($"Scanned zone failed to process.");
         }
     }
 
     private void OnMenuFinish()
     {
         // Called by Zeno flow finished.
-        Debug.Log($"Example Zeno menu finished.");
+        Debug.Log($"Zeno menu finished.");
         // Update UI.
-        ShowGameUI();
+        ShowGameMenu();
     }
 
     private void OnMenuCancel()
     {
         // Called by Zeno flow cancelled.
-        Debug.Log($"Example Zeno menu cancelled.");
-        ResetGameUI();
+        Debug.Log($"Zeno menu cancelled.");
+        HideGameMenu();
     }
 
-    public void CreateZone()
+    public void NewZone()
     {
-        Debug.Log($"Start to create zone.");
+        Debug.Log($"Start to scan a new zone.");
         ClearObjects();
-        HideGameUI();
+        HideAllMenu();
 
         ZenoUI.Instance.RestartToCreate();
     }
 
-    public void ExitZone()
-    {
-        Debug.Log($"Exit zone and reset.");
-        ClearObjects();
-        ResetGameUI();
-
-        ZenoUI.Instance.ExitScene();
-    }
-
-    public void ShowGameUI()
+    public void ShowGameMenu()
     {
         rootCanvas.gameObject.SetActive(true);
-        gameButtons.SetActive(true);
+        gameMenu.SetActive(true);
     }
 
-    public void ResetGameUI()
+    public void HideGameMenu()
     {
         rootCanvas.gameObject.SetActive(true);
-        gameButtons.SetActive(false);
+        gameMenu.SetActive(false);
     }
-    public void HideGameUI()
+    public void HideAllMenu()
     {
         rootCanvas.gameObject.SetActive(false);
-        gameButtons.SetActive(false);
     }
 
     public void DropObjects()

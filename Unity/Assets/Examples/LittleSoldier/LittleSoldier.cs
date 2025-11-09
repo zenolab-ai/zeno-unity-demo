@@ -9,8 +9,10 @@ public class LittleSoldier : MonoBehaviour
 {
     public StaticMeshRenderer staticMeshRenderer;
     public NavMeshRenderer navMeshRenderer;
-    public Canvas gameCanvas;
+    
     public Canvas rootCanvas;
+    public GameObject gameMenu;
+    
     public GameObject soldierPrefab;
     public GameObject obstaclePrefab;
 
@@ -33,7 +35,7 @@ public class LittleSoldier : MonoBehaviour
             Debug.Log($"Zeno API is not available.");
         }
 
-        ResetGameUI();
+        HideGameMenu();
     }
 
     private void OnDestroy()
@@ -46,7 +48,7 @@ public class LittleSoldier : MonoBehaviour
         // Called by ZenoUI finish dialog.
         Debug.Log($"Scan flow finished.");
 
-        ShowGameUI();
+        ShowGameMenu();
     }
 
     public void OnMenuCancel()
@@ -54,7 +56,7 @@ public class LittleSoldier : MonoBehaviour
         // Called by ZenoUI cancel dialog.
         Debug.Log($"Scan flow cancelled.");
 
-        ResetGameUI();
+        HideGameMenu();
     }
     
     public void OnZoneReady(StatusOr<AnchoredZoneInfo> zoneInfo)
@@ -71,22 +73,22 @@ public class LittleSoldier : MonoBehaviour
     }
 
 
-    public void ShowGameUI()
+    public void ShowGameMenu()
     {
         rootCanvas.gameObject.SetActive(true);
-        gameCanvas.gameObject.SetActive(true);
+        gameMenu.SetActive(true);
     }
 
-    public void ResetGameUI()
+    public void HideGameMenu()
     {
         rootCanvas.gameObject.SetActive(true);
-        gameCanvas.gameObject.SetActive(false);
+        gameMenu.SetActive(false);
     }
 
-    public void HideGameUI()
+    public void HideAllMenu()
     {
         rootCanvas.gameObject.SetActive(false);
-        gameCanvas.gameObject.SetActive(false);
+        gameMenu.SetActive(false);
     }
 
 
@@ -95,7 +97,7 @@ public class LittleSoldier : MonoBehaviour
         // Clear all
         ClearObjects();
 
-        HideGameUI();
+        HideAllMenu();
 
         ZenoUI.Instance.RestartToCreate();
     }
