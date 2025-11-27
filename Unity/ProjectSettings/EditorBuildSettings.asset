@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Examples/LittleSoldier/LittleSoldier.unity
     guid: bc758dca4840d8b45ab27138c7f3a6db
+  - enabled: 1
+    path: Assets/Examples/Garden/Garden.unity
+    guid: 023e4b1f36be07e4cb67ac25288a2564
   m_configObjects:
     AR Foundation RemoteARFoundationRemoteLoaderSettings: {fileID: 11400000, guid: 2ec9d2b32bc49bb499383613089f3a8e, type: 2}
     AR Foundation RemoteARFoundationRemoteSessionRecordsData: {fileID: 11400000, guid: d37a7439a14ce844a8392d3fbd0b54a7, type: 2}
